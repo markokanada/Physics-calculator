@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Állapotváltozások - Buborék Márkó</title>
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body onload="startUp()">
+    <div class="selector">
+        <h1>Fizikai kalkulátor</h1>
+      <ul>
+        <li onclick="contentScreenSelector(0)" class="option active">Idealizált gázállapot egyenlete</li>
+        <li onclick="contentScreenSelector(1)" class="option">Izoterm</li>
+        <li onclick="contentScreenSelector(2)" class="option">Izobár</li>
+        <li onclick="contentScreenSelector(3)" class="option">Izochor</li>
+      </ul>
+    </div>
+
+    <div class="box idealizalt active">        
+        <div class="test" id="1">
+            <p>Példa: p=10Pa,V=30l,n=10mol,T=?(C) <br> A rendszer nem kezeli a szóközöket, a tizedesjegyeket ponttal elválasztva kezeli. </p>
+            <p>p=<input id="0p" class="input " type="p">
+              <select name="Pa" id="0Pa">
+              <option value="Pa">Pa</option>
+              <option value="kPa">kPa</option>
+            </select></p>
+            <p>V=<input id="0V" class="input " type="V">
+              <select name="l" id="0l">
+                <option value="l">l</option>
+              <option value="dm3">dm3</option>
+              <option value="m3">m3</option>
+            </select></p>
+            <p>n=<input id="0n" class="input " type="n"><select name="m" id="0m">
+              <option value="mol">mol</option>
+            </select></p>
+            <p>T=<input id="0T" class="input " type="T">
+              <select name="C" id="0C">
+                <option value="C">C</option>
+              <option value="K">K</option>
+            </select></p>
+            <button type="submit" onclick="DoTheMathThing(0)">Számít</button>
+          </div>
+    <div class="test" id="2"></div>
+</div>
+    <div class="box izoterm">[W]ork [I]n [P]rogress</div>
+    <div class="box izobar">[W]ork [I]n [P]rogress</div>
+    <div class="box izochor">[W]ork [I]n [P]rogress</div>
+    <script
+      src="https://code.jquery.com/jquery-3.6.1.min.js"
+      integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      var globalResizeTimer = null;
+      $(window).resize(function () {
+        autoAlign()
+      });
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
